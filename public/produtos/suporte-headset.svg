@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img">
+<rect width="600" height="600" fill="#d9dde3"/>
+<ellipse cx="300" cy="460" rx="170" ry="18" fill="#000" opacity=".08"/>
+<g fill="#3b4350"><rect x="200" y="420" width="200" height="30" rx="10"/><rect x="285" y="200" width="30" height="230"/><path d="M230 200 q70 -60 140 0 v20 h-140z"/></g>
+<text x="300" y="560" font-family="system-ui,sans-serif" font-size="22" fill="#000" fill-opacity=".45" text-anchor="middle">Imagem ilustrativa</text>
+</svg>

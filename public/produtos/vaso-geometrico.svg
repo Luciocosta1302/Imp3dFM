@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img">
+<rect width="600" height="600" fill="#e9d9c8"/>
+<ellipse cx="300" cy="460" rx="170" ry="18" fill="#000" opacity=".08"/>
+<g fill="#c45a2a"><polygon points="210,170 390,170 420,260 380,440 220,440 180,260" /><polyline points="210,170 240,260 300,170 360,260 390,170 M180,260 240,260 300,440 360,260 420,260 M240,260 220,440 M360,260 380,440 M300,170 300,440" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="4"/></g>
+<text x="300" y="560" font-family="system-ui,sans-serif" font-size="22" fill="#000" fill-opacity=".45" text-anchor="middle">Imagem ilustrativa</text>
+</svg>

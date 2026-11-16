@@ -1,0 +1,159 @@
+:root {
+  --fundo: #faf7f2;
+  --superficie: #ffffff;
+  --superficie-alt: #f1ece3;
+  --texto: #221f1b;
+  --texto-suave: #6b645a;
+  --borda: #e3dccf;
+  --destaque: #d4571c;
+  --destaque-texto: #ffffff;
+  --destaque-suave: #fbe7dc;
+  --whatsapp: #1f8a4c;
+  --aviso: #8a4b00;
+  --aviso-fundo: #fff2d9;
+  --raio: 14px;
+  --sombra: 0 1px 2px rgb(0 0 0 / 0.05), 0 6px 20px rgb(0 0 0 / 0.06);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #171513;
+    --superficie: #211e1b;
+    --superficie-alt: #1d1a17;
+    --texto: #f2ede6;
+    --texto-suave: #b0a698;
+    --borda: #36312b;
+    --destaque: #f07a3f;
+    --destaque-texto: #1a0f08;
+    --destaque-suave: #3a2418;
+    --whatsapp: #35b26a;
+    --aviso: #ffcf7a;
+    --aviso-fundo: #3a2c12;
+    --sombra: 0 1px 2px rgb(0 0 0 / 0.3), 0 6px 20px rgb(0 0 0 / 0.25);
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { line-height: 1.15; margin: 0 0 0.5em; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.pular { position: absolute; left: -9999px; }
+.pular:focus { left: 16px; top: 8px; z-index: 10; background: var(--superficie); padding: 8px 12px; border-radius: 8px; }
+:focus-visible { outline: 3px solid var(--destaque); outline-offset: 2px; }
+
+.faixa-demo {
+  background: var(--aviso-fundo); color: var(--aviso);
+  text-align: center; font-size: 0.85rem; padding: 6px 16px;
+}
+
+/* Topo */
+.topo { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--fundo) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--borda); }
+.topo-interno { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+.marca { font-weight: 800; font-size: 1.15rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+.marca-icone { color: var(--destaque); }
+.nav { display: flex; gap: 20px; font-size: 0.95rem; }
+.nav a { text-decoration: none; color: var(--texto-suave); }
+.nav a:hover { color: var(--texto); }
+
+/* Botões */
+.botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 20px; border-radius: 999px;
+  font-weight: 650; font-size: 1rem; text-decoration: none; border: 2px solid transparent;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+.botao:hover { filter: brightness(1.06); }
+.botao:active { transform: translateY(1px); }
+.botao-primario { background: var(--whatsapp); color: #fff; }
+.botao-secundario { background: transparent; border-color: var(--borda); color: var(--texto); }
+.botao-desativado { opacity: 0.5; cursor: not-allowed; filter: grayscale(1); }
+
+/* Hero */
+.hero { padding: clamp(48px, 9vw, 104px) 0 clamp(40px, 7vw, 80px); background: radial-gradient(1200px 400px at 85% -10%, var(--destaque-suave), transparent 70%); }
+.hero-sobre { color: var(--destaque); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 12px; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); max-width: 16ch; }
+.hero-texto { color: var(--texto-suave); font-size: 1.1rem; max-width: 52ch; }
+.hero-acoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+/* Seções */
+.secao { padding: 56px 16px; }
+.secao-alt { background: var(--superficie-alt); padding: 56px 0; }
+
+/* Filtros */
+.filtros { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 20px; scrollbar-width: thin; }
+.filtro {
+  flex: none; min-height: 38px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--borda); background: var(--superficie); color: var(--texto); font: inherit; font-size: 0.92rem;
+}
+.filtro[aria-pressed="true"] { background: var(--texto); color: var(--fundo); border-color: var(--texto); }
+
+/* Grade e cartões */
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 20px; }
+.cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); transition: transform 0.15s ease; }
+.cartao:hover { transform: translateY(-3px); }
+.cartao-link { display: block; text-decoration: none; height: 100%; }
+.cartao-foto { position: relative; aspect-ratio: 1; background: var(--superficie-alt); }
+.cartao-foto img { width: 100%; height: 100%; object-fit: cover; }
+.cartao-indisponivel .cartao-foto img { opacity: 0.55; }
+.selo { position: absolute; top: 10px; left: 10px; background: var(--texto); color: var(--fundo); font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+.cartao-corpo { padding: 14px 16px 18px; }
+.cartao-categoria { color: var(--texto-suave); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px; }
+.cartao-nome { font-size: 1.05rem; margin: 0 0 6px; }
+.cartao-preco { font-weight: 750; color: var(--destaque); margin: 0; }
+
+/* Passos */
+.passos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; counter-reset: passo; }
+.passos li { background: var(--superficie); border: 1px solid var(--borda); border-radius: var(--raio); padding: 20px; counter-increment: passo; }
+.passos li::before { content: counter(passo); display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--destaque); color: var(--destaque-texto); font-weight: 800; margin-bottom: 12px; }
+.passos h3 { font-size: 1.1rem; }
+.passos p { margin: 0; color: var(--texto-suave); }
+
+/* Produto */
+.produto { padding-top: 24px; padding-bottom: 64px; }
+.trilha { font-size: 0.9rem; color: var(--texto-suave); margin-bottom: 20px; }
+.produto-grade { display: grid; gap: 32px; grid-template-columns: 1fr; }
+@media (min-width: 800px) { .produto-grade { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+.produto-fotos > img { border-radius: var(--raio); border: 1px solid var(--borda); background: var(--superficie-alt); width: 100%; aspect-ratio: 1; object-fit: cover; }
+.produto-miniaturas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
+.produto-miniaturas img { border-radius: 8px; aspect-ratio: 1; object-fit: cover; }
+.produto-info h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.produto-preco { font-size: 1.75rem; font-weight: 800; color: var(--destaque); margin: 0 0 16px; }
+.aviso { background: var(--aviso-fundo); color: var(--aviso); padding: 10px 14px; border-radius: 10px; font-weight: 600; }
+.ficha { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 24px 0; padding: 16px 0; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+.ficha dt { color: var(--texto-suave); }
+.ficha dd { margin: 0; font-weight: 600; }
+.nota { color: var(--texto-suave); font-size: 0.9rem; }
+
+.vazio { text-align: center; }
+
+/* Rodapé */
+.rodape { border-top: 1px solid var(--borda); padding: 40px 0 24px; color: var(--texto-suave); }
+.rodape-interno { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; }
+.rodape p { margin: 0 0 4px; }
+.rodape .marca { color: var(--texto); margin-bottom: 8px; }
+.rodape-copy { margin-top: 24px !important; font-size: 0.85rem; }
+
+@media (max-width: 520px) {
+  .nav { gap: 14px; font-size: 0.88rem; }
+  .hero-acoes .botao { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cartao, .botao { transition: none; }
+}
