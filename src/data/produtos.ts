@@ -20,6 +20,12 @@ export const categorias: Categoria[] = [
     imagem: "/img/arvore-natal-espiral.webp",
   },
   {
+    slug: "setup-gamer",
+    nome: "Setup gamer",
+    descricao: "Suportes para controle e headset que deixam a mesa organizada e com cara de coleção.",
+    imagem: "/img/cogumelo-porta-controle.webp",
+  },
+  {
     slug: "acessorios-celular",
     nome: "Acessórios para celular",
     descricao: "Suportes e organizadores para o celular ficar sempre à mão.",
@@ -34,7 +40,7 @@ export const categorias: Categoria[] = [
   {
     slug: "antiestresse",
     nome: "Antiestresse",
-    descricao: "Bichinhos articulados e brinquedos para mexer enquanto pensa.",
+    descricao: "Bichinhos articulados, cubo infinito e outros brinquedos para mexer enquanto pensa.",
     imagem: "/img/axolote-articulado.webp",
   },
   {
@@ -46,6 +52,34 @@ export const categorias: Categoria[] = [
 ];
 
 export const produtos: Produto[] = [
+  {
+    slug: "suporte-headset-controles",
+    nome: "Suporte de headset e controles",
+    categoria: "setup-gamer",
+    precoCentavos: 12990,
+    descricao:
+      "Torre facetada que segura o headset no alto e dois controles nos ganchos. A base vem com detalhe de palmeiras e pode ser feita em outras cores para combinar com o seu setup.",
+    material: "PLA",
+    dimensoes: "Cerca de 30 cm de altura",
+    cores: ["Cinza com base laranja", "Preto com base branca", "Outras combinações sob consulta"],
+    disponivel: true,
+    destaque: true,
+    fotos: [{ src: "/img/suporte-headset-controles.webp", alt: "Suporte cinza com headset branco no alto e dois controles, base laranja com palmeiras" }],
+  },
+  {
+    slug: "cogumelo-porta-controle",
+    nome: "Cogumelo porta-controle",
+    categoria: "setup-gamer",
+    precoCentavos: 8990,
+    descricao:
+      "Bonequinho de cogumelo com os braços abertos para segurar o controle. Com detalhes de musgo e cogumelos pequenos na base. O controle não acompanha.",
+    material: "PLA",
+    dimensoes: "Cerca de 18 cm de altura",
+    cores: ["Como na foto"],
+    disponivel: true,
+    destaque: true,
+    fotos: [{ src: "/img/cogumelo-porta-controle.webp", alt: "Cogumelo de chapéu vermelho segurando um controle preto" }],
+  },
   {
     slug: "suporte-celular-triangular",
     nome: "Suporte de celular triangular",
@@ -99,7 +133,7 @@ export const produtos: Produto[] = [
     dimensoes: "Cerca de 5 cm",
     cores: ["Azul", "Laranja", "Outras cores sob consulta"],
     disponivel: true,
-    destaque: true,
+    destaque: false,
     fotos: [{ src: "/img/chaveiros-tematicos.webp", alt: "Chaveiro azul de foguete e chaveiro laranja de patinha" }],
   },
   {
@@ -126,7 +160,7 @@ export const produtos: Produto[] = [
     dimensoes: "9 cm de diâmetro × 10 cm",
     cores: ["Branco", "Preto", "Cinza"],
     disponivel: true,
-    destaque: true,
+    destaque: false,
     fotos: [{ src: "/img/porta-canetas-canelado.webp", alt: "Porta-canetas branco canelado com duas canetas" }],
   },
   {
@@ -167,5 +201,44 @@ export const produtos: Produto[] = [
     disponivel: false,
     destaque: false,
     fotos: [{ src: "/img/floco-de-neve.webp", alt: "Floco de neve cor marfim sobre base redonda" }],
+  },
+  {
+    slug: "lagartixa-articulada",
+    nome: "Lagartixa articulada",
+    categoria: "antiestresse",
+    precoCentavos: 3490,
+    descricao: "Lagartixa impressa já montada, com rabo, patas e corpo que se mexem. Boa de ficar mexendo e faz sucesso com criança.",
+    material: "PLA",
+    dimensoes: "Cerca de 20 cm de comprimento",
+    cores: ["Roxo", "Verde", "Laranja"],
+    disponivel: true,
+    destaque: false,
+    fotos: [{ src: "/img/lagartixa-articulada.webp", alt: "Lagartixa articulada roxa" }],
+  },
+  {
+    slug: "cubo-infinito",
+    nome: "Cubo infinito",
+    categoria: "antiestresse",
+    precoCentavos: 2490,
+    descricao: "Oito cubinhos ligados por dobradiças que dobram sem parar. Cabe na mão e no bolso.",
+    material: "PLA",
+    dimensoes: "Cerca de 8 × 4 × 4 cm",
+    cores: ["Azul com laranja", "Outras combinações sob consulta"],
+    disponivel: true,
+    destaque: false,
+    fotos: [{ src: "/img/cubo-infinito.webp", alt: "Cubo infinito com cubinhos azuis e laranja" }],
+  },
+  {
+    slug: "chaveiros-anime",
+    nome: "Chaveiros de anime",
+    categoria: "chaveiros",
+    precoCentavos: 1490,
+    descricao: "Chaveiros coloridos com corrente e argola de metal: chapéu de palha e bandeira pirata. Preço por unidade.",
+    material: "PLA",
+    dimensoes: "Cerca de 5 cm",
+    cores: ["Como na foto"],
+    disponivel: true,
+    destaque: false,
+    fotos: [{ src: "/img/chaveiros-anime.webp", alt: "Chaveiro de chapéu de palha amarelo e chaveiro de caveira pirata" }],
   },
 ];

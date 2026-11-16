@@ -120,7 +120,7 @@ button, input { font: inherit; color: inherit; }
 .secao-topo { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
 
 /* Categorias */
-.categorias { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.categorias { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
 .categoria { display: flex; flex-direction: column; height: 100%; background: var(--cinza); border-radius: var(--raio); padding: 10px 10px 14px; text-decoration: none; transition: background-color .15s ease; }
 .categoria:hover { background: var(--cinza-2); }
 .categoria img { aspect-ratio: 1; object-fit: cover; border-radius: var(--raio-p); margin-bottom: 12px; }
