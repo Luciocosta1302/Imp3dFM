@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function NaoEncontrado() {
   return (
-    <div className="container secao vazio">
+    <div className="container pagina vazio">
       <h1>Página não encontrada</h1>
       <p>Essa peça pode ter saído do catálogo.</p>
-      <Link className="botao botao-secundario" href="/#catalogo">Voltar ao catálogo</Link>
+      <Link className="botao botao-escuro" href="/catalogo/">Ver catálogo</Link>
     </div>
   );
 }

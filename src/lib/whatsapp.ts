@@ -14,5 +14,9 @@ export function mensagemProduto(nome: string, slug: string, preco: string): stri
 }
 
 export function mensagemPersonalizada(): string {
-  return "Olá! Quero orçar uma impressão 3D personalizada. Vou mandar fotos, medidas ou o arquivo.";
+  return "Olá! Quero orçar uma peça personalizada. Vou mandar foto, medidas ou o arquivo.";
+}
+
+export function mensagemDataComemorativa(): string {
+  return "Olá! Quero encomendar peças para uma data comemorativa. Qual o prazo?";
 }

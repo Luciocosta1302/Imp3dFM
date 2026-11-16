@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img">
-<rect width="600" height="600" fill="#e6e3df"/>
-<ellipse cx="300" cy="460" rx="170" ry="18" fill="#000" opacity=".08"/>
-<g fill="#2f2d2a"><rect x="200" y="420" width="200" height="26" rx="8"/><rect x="290" y="300" width="22" height="130" transform="rotate(-15 300 430)"/><rect x="250" y="150" width="120" height="200" rx="16" transform="rotate(-15 310 250)"/></g>
-<text x="300" y="560" font-family="system-ui,sans-serif" font-size="22" fill="#000" fill-opacity=".45" text-anchor="middle">Imagem ilustrativa</text>
-</svg>

@@ -9,9 +9,11 @@ export const loja = {
   demonstracao: true,
 
   nome: "Loja 3D",
-  slogan: "Peças impressas em 3D, feitas sob medida para você",
+  /** Frase curta embaixo do nome, no logo. */
+  assinatura: "impressão 3D sob encomenda",
+  titulo: "Peças impressas em 3D para presentear, decorar e organizar",
   descricao:
-    "Catálogo de peças impressas em 3D. Escolha uma peça e fale direto pelo WhatsApp para combinar cor, prazo e entrega.",
+    "Escolha no catálogo ou mande a sua ideia. Cor, quantidade e prazo a gente combina pelo WhatsApp.",
 
   /**
    * WhatsApp com código do país e DDD, só números. Ex.: "5511987654321".
@@ -19,11 +21,11 @@ export const loja = {
    */
   whatsapp: "",
 
-  cidade: "Sua cidade · UF",
+  /** Cidade e UF, ex.: "Campinas · SP". Vazio = não aparece no site. */
+  cidade: "",
   entrega: "Retirada combinada ou envio pelos Correios. Frete calculado à parte.",
+  materiais: "PLA e PETG",
 
   /** Instagram sem @ (opcional). */
   instagram: "",
 } as const;
-
-export type Loja = typeof loja;

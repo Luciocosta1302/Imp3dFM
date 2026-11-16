@@ -16,15 +16,22 @@ npm run build     # gera o site final na pasta out/
 
 | O quê | Onde |
 |---|---|
-| Nome, slogan, WhatsApp, cidade, entrega, Instagram | `src/config/loja.ts` |
-| Peças (nome, preço, descrição, fotos, disponibilidade) | `src/data/produtos.ts` |
-| Fotos das peças | `public/produtos/` (JPG, PNG, WebP ou SVG; de preferência quadradas, até ~300 KB) |
+| Nome, títulos, WhatsApp, cidade, entrega, Instagram | `src/config/loja.ts` |
+| Categorias (Natal, Chaveiros etc.) e peças | `src/data/produtos.ts` |
+| Fotos | `public/img/` (WebP ou JPG, **quadradas**, 800 × 800, até ~150 KB) |
+| Banner e coleções da página inicial | `src/app/page.tsx` e `public/img/banner-*.webp`, `colecao-*.webp` |
 | Cores e visual | `src/app/globals.css` (variáveis no topo) |
 
 - **Preço em centavos:** R$ 39,90 = `3990`. Use `null` para "Sob consulta".
-- **Esconder uma peça:** apague o bloco ou marque `disponivel: false` (continua visível com selo "Indisponível").
+- **Nova categoria:** adicione em `categorias` e use o `slug` dela no campo `categoria` das peças. Ela aparece sozinha na página inicial, no rodapé e no filtro do catálogo.
+- **Esconder uma peça:** apague o bloco, ou marque `disponivel: false` (continua visível com selo "Esgotado").
+- **Mais procurados:** peças com `destaque: true` (até 6) aparecem na página inicial.
 - **WhatsApp:** só números, com país e DDD, ex. `"5511987654321"`. Vazio = botões desativados.
-- O build **falha** se o catálogo tiver erro (slug repetido, preço inválido, foto sem descrição), então dado quebrado não vai para o ar.
+- O build **falha** se o catálogo tiver erro (slug repetido, categoria inexistente, preço inválido, foto sem descrição ou arquivo faltando nos testes), então dado quebrado não vai para o ar.
+
+## Páginas
+
+`/` início · `/catalogo/` busca e filtro (aceita `?q=` e `?categoria=`) · `/categorias/<slug>/` · `/produtos/<slug>/`
 
 ## Antes de publicar
 

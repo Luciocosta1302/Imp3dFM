@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img">
-<rect width="600" height="600" fill="#efe0d0"/>
-<ellipse cx="300" cy="460" rx="170" ry="18" fill="#000" opacity=".08"/>
-<g fill="#d4571c"><circle cx="190" cy="300" r="34" fill="none" stroke="#d4571c" stroke-width="12"/><rect x="220" y="250" width="230" height="100" rx="24"/><text x="335" y="315" font-family="system-ui,sans-serif" font-size="44" font-weight="800" fill="#fff" text-anchor="middle">NOME</text></g>
-<text x="300" y="560" font-family="system-ui,sans-serif" font-size="22" fill="#000" fill-opacity=".45" text-anchor="middle">Imagem ilustrativa</text>
-</svg>

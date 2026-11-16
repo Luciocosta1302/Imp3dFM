@@ -3,19 +3,22 @@ import { formatarPreco, type Produto } from "@/lib/catalogo";
 
 export function CartaoProduto({ produto }: { produto: Produto }) {
   const foto = produto.fotos[0];
+  const href = `/produtos/${produto.slug}/`;
   return (
-    <article className={`cartao${produto.disponivel ? "" : " cartao-indisponivel"}`}>
-      <Link href={`/produtos/${produto.slug}/`} className="cartao-link">
-        <div className="cartao-foto">
-          <img src={foto.src} alt={foto.alt} loading="lazy" width={600} height={600} />
-          {!produto.disponivel && <span className="selo">Indisponível</span>}
-        </div>
-        <div className="cartao-corpo">
-          <p className="cartao-categoria">{produto.categoria}</p>
-          <h3 className="cartao-nome">{produto.nome}</h3>
-          <p className="cartao-preco">{formatarPreco(produto.precoCentavos)}</p>
-        </div>
+    <article className={`cartao${produto.disponivel ? "" : " cartao-esgotado"}`}>
+      <Link href={href} className="cartao-foto" tabIndex={-1} aria-hidden="true">
+        <img src={foto.src} alt="" loading="lazy" width={800} height={800} />
+        {!produto.disponivel && <span className="selo">Esgotado</span>}
       </Link>
+      <div className="cartao-corpo">
+        <h3 className="cartao-nome">
+          <Link href={href}>{produto.nome}</Link>
+        </h3>
+        <p className="cartao-preco">{formatarPreco(produto.precoCentavos)}</p>
+        <Link href={href} className="botao botao-escuro botao-pequeno cartao-botao" tabIndex={-1} aria-hidden="true">
+          Ver peça
+        </Link>
+      </div>
     </article>
   );
 }
