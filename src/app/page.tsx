@@ -16,7 +16,7 @@ export default function Inicio() {
       <section className="hero">
         <img className="hero-imagem" src="/img/banner-impressora.webp" alt="" width={1600} height={900} fetchPriority="high" />
         <div className="container hero-conteudo">
-          <p className="sobretitulo">Impressão 3D{loja.cidade ? ` em ${loja.cidade}` : ""}</p>
+          <p className="sobretitulo">{loja.nome}{loja.cidade ? ` · Impressão 3D em ${loja.cidade.split(" · ")[0]}` : ""}</p>
           <h1>{loja.titulo}</h1>
           <p className="hero-texto">{loja.descricao}</p>
           <div className="hero-acoes">

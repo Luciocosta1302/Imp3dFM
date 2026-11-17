@@ -6,10 +6,10 @@
   --borda: #e3e6eb;
   --texto: #0f141c;
   --texto-2: #5b6474;
-  --marinho: #0d1424;
-  --marinho-2: #18223a;
-  --azul: #1d4ed8;
-  --azul-escuro: #1a3fae;
+  --marinho: #0a0f1a;
+  --marinho-2: #162033;
+  --azul: #1662d6;
+  --azul-escuro: #114fb0;
   --verde-zap: #1c8f4e;
   --verde-natal: #1f4d33;
   --aviso: #8a4b00;
@@ -81,12 +81,12 @@ button, input { font: inherit; color: inherit; }
 .cabecalho { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--borda); }
 .cabecalho-linha { display: flex; align-items: center; gap: 32px; min-height: var(--cabecalho); }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--texto); flex: none; }
-.logo-marca { color: var(--azul); }
+.logo-marca { width: 44px; height: 44px; border-radius: 50%; flex: none; }
+.rodape .logo-marca { width: 72px; height: 72px; }
 .logo-texto { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-nome { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; }
-.logo-assinatura { font-size: 0.68rem; color: var(--texto-2); text-transform: uppercase; letter-spacing: 0.08em; }
+.logo-assinatura { font-size: 0.66rem; color: var(--texto-2); text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
 .logo-claro { color: #fff; }
-.logo-claro .logo-marca { color: #fff; }
 .logo-claro .logo-assinatura { color: #9aa4b8; }
 
 .nav { display: flex; gap: 26px; }
@@ -102,12 +102,15 @@ button, input { font: inherit; color: inherit; }
 }
 .busca input::placeholder { color: #8a93a3; }
 .busca input:focus { outline: none; border-color: var(--azul); background: #fff; box-shadow: 0 0 0 3px #1d4ed822; }
+.link-instagram { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; color: var(--texto); flex: none; margin-left: -16px; }
+.link-instagram:hover { background: var(--cinza); color: var(--azul); }
+.rodape-instagram { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 600; }
 .botao-menu { display: none; background: none; border: 0; padding: 8px; margin-right: -8px; border-radius: 8px; cursor: pointer; }
 
 /* ===== Hero ===== */
 .hero { position: relative; background: var(--marinho); color: #fff; overflow: hidden; isolation: isolate; }
 .hero-imagem { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: -2; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--marinho) 0%, #0d1424e6 38%, #0d142400 70%); }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--marinho) 0%, #0a0f1ae6 38%, #0a0f1a00 70%); }
 .hero-conteudo { padding-top: clamp(56px, 8vw, 104px); padding-bottom: clamp(56px, 8vw, 104px); }
 .sobretitulo { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9db5ff; margin-bottom: 14px; }
 .hero h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); max-width: 15ch; }
@@ -255,7 +258,8 @@ a.cartao-categoria:hover { color: var(--azul); }
   :root { --cabecalho: 60px; }
   .faixa-topo-extra { display: none; }
   .cabecalho-linha { flex-wrap: wrap; gap: 0 12px; }
-  .botao-menu { display: grid; place-items: center; margin-left: auto; order: 2; }
+  .link-instagram { order: 2; margin-left: auto; }
+  .botao-menu { display: grid; place-items: center; order: 2; }
   .busca { order: 3; width: 100%; margin: 0 0 12px; }
   .nav {
     display: none; order: 4; flex-direction: column; gap: 0; width: calc(100% + 40px); margin: 0 -20px;
@@ -275,7 +279,7 @@ a.cartao-categoria:hover { color: var(--azul); }
   .vantagens-lista { grid-template-columns: 1fr 1fr; }
   .passos { grid-template-columns: 1fr; }
   .produto { grid-template-columns: 1fr; gap: 24px; }
-  .hero::before { background: linear-gradient(90deg, #0d1424f2 0%, #0d1424cc 55%, #0d142466 100%); }
+  .hero::before { background: linear-gradient(90deg, #0a0f1af2 0%, #0a0f1acc 55%, #0a0f1a66 100%); }
   .hero-imagem { object-position: 72% center; }
 }
 
@@ -296,6 +300,13 @@ a.cartao-categoria:hover { color: var(--azul); }
   .filtros { flex-wrap: nowrap; overflow-x: auto; margin: 0 -16px; padding: 0 16px 4px; scrollbar-width: none; }
   .filtros::-webkit-scrollbar { display: none; }
   .secao-topo { margin-bottom: 16px; }
+}
+
+@media (max-width: 380px) {
+  .cabecalho-linha { gap: 0 4px; }
+  .logo { gap: 8px; min-width: 0; }
+  .logo-marca { width: 38px; height: 38px; }
+  .logo-assinatura { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

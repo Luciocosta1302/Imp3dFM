@@ -5,17 +5,21 @@ import { loja } from "@/config/loja";
 import { catalogo } from "@/lib/dados";
 import { Cabecalho } from "@/components/Cabecalho";
 import { Logo } from "@/components/Logo";
+import { Icone } from "@/components/Icone";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
 import { mensagemPersonalizada } from "@/lib/whatsapp";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: { default: `${loja.nome} · ${loja.assinatura}`, template: `%s · ${loja.nome}` },
+  title: {
+    default: `${loja.nome} · Impressão 3D${loja.cidade ? ` em ${loja.cidade.split(" · ")[0]}` : ""}`,
+    template: `%s · ${loja.nome}`,
+  },
   description: loja.descricao,
   robots: loja.demonstracao ? { index: false, follow: false } : undefined,
 };
 
-export const viewport: Viewport = { themeColor: "#0d1424" };
+export const viewport: Viewport = { themeColor: "#0a0f1a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const ano = new Date().getFullYear();
@@ -26,14 +30,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <div className="faixa-topo">
           <div className="container faixa-topo-linha">
-            <span>Peças impressas sob encomenda</span>
-            <span className="faixa-topo-extra">Cores e tamanhos à escolha</span>
+            <span>Do digital ao real</span>
+            <span className="faixa-topo-extra">Peças impressas sob encomenda</span>
             <span className="faixa-topo-extra">{loja.cidade ? `Atendemos ${loja.cidade}` : "Retirada ou envio"}</span>
           </div>
         </div>
         {loja.demonstracao && (
           <p className="faixa-demo" role="note">
-            Site em demonstração: preços fictícios e WhatsApp ainda não configurado.
+            Site em construção: preços e fotos de exemplo, WhatsApp ainda não configurado.
           </p>
         )}
 
@@ -44,11 +48,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="rodape">
           <div className="container rodape-grade">
             <div className="rodape-marca">
-              <Logo claro />
+              <Logo claro grande />
               <p>{loja.descricao}</p>
               {loja.instagram && (
-                <a href={`https://instagram.com/${loja.instagram}`} target="_blank" rel="noopener noreferrer">
-                  Instagram @{loja.instagram}
+                <a className="rodape-instagram" href={`https://instagram.com/${loja.instagram}`} target="_blank" rel="noopener noreferrer">
+                  <Icone nome="instagram" tamanho={18} /> @{loja.instagram}
                 </a>
               )}
             </div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { Logo } from "./Logo";
 import { Icone } from "./Icone";
+import { loja } from "@/config/loja";
 
 const links = [
   { href: "/", rotulo: "Início" },
@@ -47,6 +48,18 @@ export function Cabecalho() {
           <Icone nome="busca" tamanho={18} />
           <input id="busca-topo" name="q" type="search" placeholder="Buscar peças" autoComplete="off" />
         </form>
+
+        {loja.instagram && (
+          <a
+            className="link-instagram"
+            href={`https://instagram.com/${loja.instagram}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Instagram @${loja.instagram}`}
+          >
+            <Icone nome="instagram" tamanho={22} />
+          </a>
+        )}
 
         <button
           type="button"

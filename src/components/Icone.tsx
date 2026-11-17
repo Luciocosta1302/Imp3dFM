@@ -8,6 +8,7 @@ const caminhos = {
   regua: <><path d="m3 16 13-13 5 5L8 21z" /><path d="m7 12 2 2m1-5 2 2m1-5 2 2" /></>,
   cubo: <><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z" /><path d="M4 7.5 12 12l8-4.5M12 12v9" /></>,
   conversa: <path d="M4 5h16v11H9l-5 4z" />,
+  instagram: <><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r=".6" fill="currentColor" /></>,
   calendario: <><rect x="3.5" y="5" width="17" height="15" rx="2" /><path d="M3.5 10h17M8 3v4m8-4v4" /></>,
 } as const;
 

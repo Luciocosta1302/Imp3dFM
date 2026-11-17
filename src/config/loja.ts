@@ -1,31 +1,32 @@
 /**
  * Dados da loja. Edite este arquivo para trocar nome, contato e textos.
  *
- * ATENÇÃO: os valores abaixo são de DEMONSTRAÇÃO. Enquanto `demonstracao`
- * for `true`, o site mostra uma faixa avisando que o conteúdo é fictício.
+ * Enquanto `demonstracao` for `true`, o site mostra uma faixa avisando
+ * que preços e WhatsApp ainda são de demonstração.
  */
 export const loja = {
-  /** Mostra a faixa "conteúdo de demonstração". Mude para false ao publicar. */
+  /** Mostra a faixa "site em demonstração". Mude para false ao publicar. */
   demonstracao: true,
 
-  nome: "Loja 3D",
+  nome: "Galaxy 3D",
   /** Frase curta embaixo do nome, no logo. */
-  assinatura: "impressão 3D sob encomenda",
-  titulo: "Peças impressas em 3D para presentear, decorar e organizar",
+  assinatura: "Ideias que ganham forma",
+  logo: "/img/logo-galaxy3d.webp",
+  titulo: "Ideias que ganham forma",
   descricao:
-    "Escolha no catálogo ou mande a sua ideia. Cor, quantidade e prazo a gente combina pelo WhatsApp.",
+    "Impressão 3D em Marabá: peças personalizadas, funcionais, decoração e presentes criativos. Escolha no catálogo ou mande a sua ideia pelo WhatsApp.",
 
   /**
-   * WhatsApp com código do país e DDD, só números. Ex.: "5511987654321".
+   * WhatsApp com código do país e DDD, só números. Ex.: "5594987654321".
    * Vazio = botões de WhatsApp aparecem desativados.
    */
   whatsapp: "",
 
-  /** Cidade e UF, ex.: "Campinas · SP". Vazio = não aparece no site. */
-  cidade: "",
-  entrega: "Retirada combinada ou envio pelos Correios. Frete calculado à parte.",
+  /** Cidade e UF. Vazio = não aparece no site. */
+  cidade: "Marabá · PA",
+  entrega: "Retirada combinada em Marabá ou envio pelos Correios. Frete calculado à parte.",
   materiais: "PLA e PETG",
 
   /** Instagram sem @ (opcional). */
-  instagram: "",
+  instagram: "galaxy3d.mab",
 } as const;
