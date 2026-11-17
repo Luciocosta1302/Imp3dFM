@@ -18,12 +18,20 @@ export function Cabecalho() {
   const [aberto, setAberto] = useState(false);
   const caminho = usePathname();
   const idMenu = useId();
+  const [rolado, setRolado] = useState(false);
+
+  useEffect(() => {
+    const aoRolar = () => setRolado(window.scrollY > 8);
+    aoRolar();
+    window.addEventListener("scroll", aoRolar, { passive: true });
+    return () => window.removeEventListener("scroll", aoRolar);
+  }, []);
 
   // Fecha o menu ao trocar de página.
   useEffect(() => setAberto(false), [caminho]);
 
   return (
-    <header className="cabecalho">
+    <header className={`cabecalho${rolado ? " cabecalho-rolado" : ""}`}>
       <div className="container cabecalho-linha">
         <Logo />
 

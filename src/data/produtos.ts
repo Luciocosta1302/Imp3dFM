@@ -51,6 +51,9 @@ export const categorias: Categoria[] = [
   },
 ];
 
+/** Peças que se revezam no banner "imprimindo agora" (fotos de fundo branco ficam melhores). */
+export const pecasBanner = ["cogumelo-porta-controle", "casinha-natal", "suporte-headset-controles", "lagartixa-articulada"];
+
 export const produtos: Produto[] = [
   {
     slug: "suporte-headset-controles",

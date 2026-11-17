@@ -64,7 +64,7 @@ export function BuscaCatalogo({ produtos, categorias }: Props) {
       </p>
 
       {visiveis.length > 0 ? (
-        <GradeProdutos produtos={visiveis} />
+        <GradeProdutos key={categoria || "todas"} produtos={visiveis} />
       ) : (
         <div className="vazio">
           <p>Tente outra palavra ou veja todas as peças.</p>

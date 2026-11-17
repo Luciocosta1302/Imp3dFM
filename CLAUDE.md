@@ -12,3 +12,5 @@ Catálogo estático de impressão 3D (Next.js 16, `output: "export"`). Sem backe
 - CSS: `.container` só define padding lateral (`padding-inline`); nunca usar `padding: 0 X` nele, que zera o espaçamento vertical das seções.
 - Antes de entregar mudança visual, conferir em 320, 390, 768 e 1280 px de largura.
 - A loja NÃO faz peças personalizadas por enquanto: não anunciar orçamento sob medida, envio de ideia/foto/STL, nome ou logo nas peças.
+- Design e animação seguem `PROJECT_DESIGN.md` (direção "vitrine viva", movimento equilibrado). Skill de UI instalada em `.claude/skills/tasteful-ui`.
+- Animações: só `transform`, `opacity` e `clip-path`; entrada ao rolar via `data-revelar` (+ `--i` para cascata); tudo desligado em `prefers-reduced-motion`; nada pode ficar escondido sem JavaScript (esconder só sob `.js`).

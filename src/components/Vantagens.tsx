@@ -12,8 +12,8 @@ export function Vantagens() {
   return (
     <section className="vantagens" aria-label="Como trabalhamos">
       <ul className="container vantagens-lista">
-        {itens.map((i) => (
-          <li key={i.titulo}>
+        {itens.map((i, n) => (
+          <li key={i.titulo} data-revelar style={{ "--i": n } as React.CSSProperties}>
             <span className="vantagem-icone"><Icone nome={i.icone} tamanho={26} /></span>
             <span>
               <strong>{i.titulo}</strong>

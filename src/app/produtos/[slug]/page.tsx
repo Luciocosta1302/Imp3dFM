@@ -5,6 +5,8 @@ import { catalogo, categoriaPorSlug } from "@/lib/dados";
 import { formatarPreco, relacionados } from "@/lib/catalogo";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
 import { GradeProdutos } from "@/components/GradeProdutos";
+import { BarraPedido } from "@/components/BarraPedido";
+import { Compartilhar } from "@/components/Compartilhar";
 import { mensagemProduto } from "@/lib/whatsapp";
 
 type Params = { slug: string };
@@ -32,6 +34,8 @@ export default async function PaginaProduto({ params }: { params: Promise<Params
   const preco = formatarPreco(produto.precoCentavos);
   const [principal, ...outras] = produto.fotos;
   const sugestoes = relacionados(catalogo.produtos, produto);
+  const mensagem = mensagemProduto(produto.nome, produto.slug, preco);
+  const rotulo = produto.disponivel ? "Pedir pelo WhatsApp" : "Perguntar disponibilidade";
 
   return (
     <div className="container pagina">
@@ -43,7 +47,7 @@ export default async function PaginaProduto({ params }: { params: Promise<Params
         <span aria-current="page">{produto.nome}</span>
       </nav>
 
-      <div className="produto">
+      <div className="produto" data-revelar>
         <div className="produto-fotos">
           <img src={principal.src} alt={principal.alt} width={800} height={800} fetchPriority="high" />
           {outras.length > 0 && (
@@ -70,19 +74,24 @@ export default async function PaginaProduto({ params }: { params: Promise<Params
             <div><dt>Cores</dt><dd>{produto.cores.join(", ")}</dd></div>
           </dl>
 
-          <BotaoWhatsApp mensagem={mensagemProduto(produto.nome, produto.slug, preco)} className="botao-largo">
-            {produto.disponivel ? "Pedir pelo WhatsApp" : "Perguntar disponibilidade"}
-          </BotaoWhatsApp>
+          <div className="produto-acoes">
+            <BotaoWhatsApp id="pedido-principal" mensagem={mensagem} className="botao-largo">
+              {rotulo}
+            </BotaoWhatsApp>
+            <Compartilhar titulo={`${produto.nome} · ${preco}`} />
+          </div>
           <p className="nota">Cor, prazo e frete são confirmados na conversa. Referência: {produto.slug}</p>
         </div>
       </div>
 
       {sugestoes.length > 0 && (
         <section className="secao-relacionados" aria-labelledby="t-relacionados">
-          <h2 id="t-relacionados">Você também pode gostar</h2>
+          <h2 id="t-relacionados" data-revelar>Você também pode gostar</h2>
           <GradeProdutos produtos={sugestoes} />
         </section>
       )}
+
+      <BarraPedido nome={produto.nome} preco={preco} mensagem={mensagem} rotulo={produto.disponivel ? "Pedir" : "Perguntar"} />
     </div>
   );
 }

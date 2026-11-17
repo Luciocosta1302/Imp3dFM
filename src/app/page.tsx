@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { loja } from "@/config/loja";
-import { catalogo } from "@/lib/dados";
+import { catalogo, vitrine } from "@/lib/dados";
+import { formatarPreco } from "@/lib/catalogo";
+import { ImprimindoAgora } from "@/components/ImprimindoAgora";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
 import { GradeProdutos } from "@/components/GradeProdutos";
 import { Vantagens } from "@/components/Vantagens";
@@ -15,7 +17,8 @@ export default function Inicio() {
     <>
       <section className="hero">
         <img className="hero-imagem" src="/img/banner-impressora.webp" alt="" width={1600} height={900} fetchPriority="high" />
-        <div className="container hero-conteudo">
+        <div className="container hero-grade">
+        <div className="hero-conteudo">
           <p className="sobretitulo">{loja.nome}{loja.cidade ? ` · Impressão 3D em ${loja.cidade.split(" · ")[0]}` : ""}</p>
           <h1>{loja.titulo}</h1>
           <p className="hero-texto">{loja.descricao}</p>
@@ -28,18 +31,30 @@ export default function Inicio() {
             </BotaoWhatsApp>
           </div>
         </div>
+        <ImprimindoAgora
+          pecas={vitrine.map((p) => ({
+            slug: p.slug,
+            nome: p.nome,
+            preco: formatarPreco(p.precoCentavos),
+            foto: p.fotos[0].src,
+            alt: p.fotos[0].alt,
+          }))}
+        />
+        </div>
       </section>
 
       <section id="categorias" className="secao container" aria-labelledby="t-categorias">
-        <div className="secao-topo">
+        <div className="secao-topo" data-revelar>
           <h2 id="t-categorias">Categorias</h2>
           <Link href="/catalogo/" className="link-seta">Ver tudo <Icone nome="seta" tamanho={16} /></Link>
         </div>
         <ul className="categorias">
-          {catalogo.categorias.map((c) => (
-            <li key={c.slug}>
+          {catalogo.categorias.map((c, i) => (
+            <li key={c.slug} data-revelar style={{ "--i": i } as React.CSSProperties}>
               <Link href={`/categorias/${c.slug}/`} className="categoria">
-                <img src={c.imagem} alt="" width={800} height={800} loading="lazy" />
+                <span className="categoria-foto">
+                  <img src={c.imagem} alt="" width={800} height={800} loading="lazy" />
+                </span>
                 <span className="categoria-nome">{c.nome}</span>
                 <span className="categoria-qtd">{qtd(c.slug)} {qtd(c.slug) === 1 ? "peça" : "peças"}</span>
               </Link>
@@ -49,7 +64,7 @@ export default function Inicio() {
       </section>
 
       <section className="container colecoes" aria-label="Coleções">
-        <Link href="/categorias/natal/" className="colecao colecao-natal">
+        <Link href="/categorias/natal/" className="colecao colecao-natal" data-revelar>
           <img src="/img/colecao-natal.webp" alt="" width={1200} height={900} loading="lazy" />
           <span className="colecao-texto">
             <span className="sobretitulo">Coleção</span>
@@ -58,7 +73,7 @@ export default function Inicio() {
             <span className="botao botao-claro botao-pequeno">Ver coleção <Icone nome="seta" tamanho={16} /></span>
           </span>
         </Link>
-        <Link href="/categorias/mesa-e-organizacao/" className="colecao colecao-mesa">
+        <Link href="/categorias/mesa-e-organizacao/" className="colecao colecao-mesa" data-revelar style={{ "--i": 1 } as React.CSSProperties}>
           <img src="/img/colecao-mesa.webp" alt="" width={1200} height={900} loading="lazy" />
           <span className="colecao-texto">
             <span className="sobretitulo">Para o dia a dia</span>
@@ -70,7 +85,7 @@ export default function Inicio() {
       </section>
 
       <section className="secao container" aria-labelledby="t-procurados">
-        <div className="secao-topo">
+        <div className="secao-topo" data-revelar>
           <h2 id="t-procurados">Mais procurados</h2>
           <Link href="/catalogo/" className="link-seta">Ver catálogo <Icone nome="seta" tamanho={16} /></Link>
         </div>
@@ -78,7 +93,7 @@ export default function Inicio() {
       </section>
 
       <section className="container faixas" aria-label="Novidades e atendimento">
-        <div className="faixa-promo faixa-datas">
+        <div className="faixa-promo faixa-datas" data-revelar>
           <Icone nome="calendario" tamanho={28} />
           <div>
             <h2>Datas comemorativas</h2>
@@ -90,7 +105,7 @@ export default function Inicio() {
             </a>
           )}
         </div>
-        <div className="faixa-promo faixa-duvidas">
+        <div className="faixa-promo faixa-duvidas" data-revelar style={{ "--i": 1 } as React.CSSProperties}>
           <Icone nome="conversa" tamanho={28} />
           <div>
             <h2>Ficou com dúvida sobre uma peça?</h2>
@@ -105,17 +120,17 @@ export default function Inicio() {
       <Vantagens />
 
       <section id="como-encomendar" className="secao container" aria-labelledby="t-como">
-        <h2 id="t-como">Como encomendar</h2>
+        <h2 id="t-como" data-revelar>Como encomendar</h2>
         <ol className="passos">
-          <li>
+          <li data-revelar style={{ "--i": 0 } as React.CSSProperties}>
             <h3>Escolha a peça</h3>
             <p>Navegue pelo catálogo ou pelas categorias e abra a peça que você gostou.</p>
           </li>
-          <li>
+          <li data-revelar style={{ "--i": 1 } as React.CSSProperties}>
             <h3>Combine pelo WhatsApp</h3>
             <p>Toque em "Pedir pelo WhatsApp". A mensagem já vai com o nome da peça; é só combinar cor, quantidade e prazo.</p>
           </li>
-          <li>
+          <li data-revelar style={{ "--i": 2 } as React.CSSProperties}>
             <h3>Retire ou receba</h3>
             <p>{loja.entrega}</p>
           </li>

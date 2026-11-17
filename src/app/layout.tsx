@@ -4,6 +4,7 @@ import "@fontsource-variable/plus-jakarta-sans";
 import { loja } from "@/config/loja";
 import { catalogo } from "@/lib/dados";
 import { Cabecalho } from "@/components/Cabecalho";
+import { Revelar } from "@/components/Revelar";
 import { Logo } from "@/components/Logo";
 import { Icone } from "@/components/Icone";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
@@ -24,8 +25,13 @@ export const viewport: Viewport = { themeColor: "#0a0f1a" };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const ano = new Date().getFullYear();
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        {/* Liga as animações de entrada só quando há JavaScript. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>
+        <Revelar />
         <a href="#conteudo" className="pular">Pular para o conteúdo</a>
 
         <div className="faixa-topo">
