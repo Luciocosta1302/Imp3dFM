@@ -13,10 +13,6 @@ export function mensagemProduto(nome: string, slug: string, preco: string): stri
   return `Olá! Tenho interesse na peça "${nome}" (ref. ${slug}, ${preco}). Pode me passar cores e prazo?`;
 }
 
-export function mensagemPersonalizada(): string {
-  return "Olá! Quero orçar uma peça personalizada. Vou mandar foto, medidas ou o arquivo.";
-}
-
-export function mensagemDataComemorativa(): string {
-  return "Olá! Quero encomendar peças para uma data comemorativa. Qual o prazo?";
+export function mensagemContato(): string {
+  return "Olá! Vi o catálogo da Galaxy 3D e queria tirar uma dúvida.";
 }

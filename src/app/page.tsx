@@ -5,7 +5,7 @@ import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
 import { GradeProdutos } from "@/components/GradeProdutos";
 import { Vantagens } from "@/components/Vantagens";
 import { Icone } from "@/components/Icone";
-import { mensagemDataComemorativa, mensagemPersonalizada } from "@/lib/whatsapp";
+import { mensagemContato } from "@/lib/whatsapp";
 
 export default function Inicio() {
   const maisProcurados = catalogo.produtos.filter((p) => p.destaque && p.disponivel).slice(0, 6);
@@ -23,8 +23,8 @@ export default function Inicio() {
             <Link href="/catalogo/" className="botao botao-claro">
               Ver catálogo <Icone nome="seta" tamanho={18} />
             </Link>
-            <BotaoWhatsApp mensagem={mensagemPersonalizada()} variante="whatsapp">
-              Orçar peça personalizada
+            <BotaoWhatsApp mensagem={mensagemContato()} variante="whatsapp">
+              Falar no WhatsApp
             </BotaoWhatsApp>
           </div>
         </div>
@@ -77,25 +77,27 @@ export default function Inicio() {
         <GradeProdutos produtos={maisProcurados} />
       </section>
 
-      <section className="container faixas" aria-label="Encomendas">
+      <section className="container faixas" aria-label="Novidades e atendimento">
         <div className="faixa-promo faixa-datas">
           <Icone nome="calendario" tamanho={28} />
           <div>
             <h2>Datas comemorativas</h2>
-            <p>Páscoa, Dia das Mães, Dia dos Pais, Dia das Crianças, Halloween. Encomende com pelo menos duas semanas de antecedência.</p>
+            <p>Coleções de Páscoa, Dia das Mães, Dia dos Pais e Dia das Crianças. As novidades saem primeiro no Instagram.</p>
           </div>
-          <BotaoWhatsApp mensagem={mensagemDataComemorativa()} variante="claro" className="botao-pequeno">
-            Encomendar
-          </BotaoWhatsApp>
+          {loja.instagram && (
+            <a className="botao botao-claro botao-pequeno" href={`https://instagram.com/${loja.instagram}`} target="_blank" rel="noopener noreferrer">
+              <Icone nome="instagram" tamanho={18} /> Seguir
+            </a>
+          )}
         </div>
-        <div id="personalizados" className="faixa-promo faixa-personalizado">
+        <div className="faixa-promo faixa-duvidas">
           <Icone nome="conversa" tamanho={28} />
           <div>
-            <h2>Tem uma ideia ou um arquivo?</h2>
-            <p>Mande foto, medidas ou o arquivo STL. A gente avalia e passa o orçamento pelo WhatsApp.</p>
+            <h2>Ficou com dúvida sobre uma peça?</h2>
+            <p>Pergunte sobre cores, prazo ou entrega. A gente responde pelo WhatsApp.</p>
           </div>
-          <BotaoWhatsApp mensagem={mensagemPersonalizada()} variante="claro" className="botao-pequeno">
-            Pedir orçamento
+          <BotaoWhatsApp mensagem={mensagemContato()} variante="claro" className="botao-pequeno">
+            Perguntar
           </BotaoWhatsApp>
         </div>
       </section>
@@ -107,11 +109,11 @@ export default function Inicio() {
         <ol className="passos">
           <li>
             <h3>Escolha a peça</h3>
-            <p>No catálogo, ou mande a ideia, a foto ou o arquivo da peça que você quer.</p>
+            <p>Navegue pelo catálogo ou pelas categorias e abra a peça que você gostou.</p>
           </li>
           <li>
             <h3>Combine pelo WhatsApp</h3>
-            <p>Cor, quantidade e prazo. Peças personalizadas recebem orçamento na conversa.</p>
+            <p>Toque em "Pedir pelo WhatsApp". A mensagem já vai com o nome da peça; é só combinar cor, quantidade e prazo.</p>
           </li>
           <li>
             <h3>Retire ou receba</h3>

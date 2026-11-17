@@ -14,7 +14,7 @@ export const loja = {
   logo: "/img/logo-galaxy3d.webp",
   titulo: "Ideias que ganham forma",
   descricao:
-    "Impressão 3D em Marabá: peças personalizadas, funcionais, decoração e presentes criativos. Escolha no catálogo ou mande a sua ideia pelo WhatsApp.",
+    "Impressão 3D em Marabá: peças funcionais, decoração e presentes criativos. Escolha no catálogo e combine cor e entrega pelo WhatsApp.",
 
   /**
    * WhatsApp com código do país e DDD, só números. Ex.: "5594987654321".

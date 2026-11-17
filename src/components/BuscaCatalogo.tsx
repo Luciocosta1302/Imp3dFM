@@ -67,7 +67,7 @@ export function BuscaCatalogo({ produtos, categorias }: Props) {
         <GradeProdutos produtos={visiveis} />
       ) : (
         <div className="vazio">
-          <p>Não achou o que procurava? Muita coisa pode ser impressa sob encomenda.</p>
+          <p>Tente outra palavra ou veja todas as peças.</p>
           <button type="button" className="botao botao-contorno" onClick={() => { setTermo(""); setCategoria(""); }}>
             Limpar busca
           </button>

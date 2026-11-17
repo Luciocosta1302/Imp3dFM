@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { catalogo, categoriaPorSlug, produtosDaCategoria } from "@/lib/dados";
 import { GradeProdutos } from "@/components/GradeProdutos";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
-import { mensagemPersonalizada } from "@/lib/whatsapp";
+import { mensagemContato } from "@/lib/whatsapp";
 
 type Params = { slug: string };
 
@@ -43,8 +43,8 @@ export default async function PaginaCategoria({ params }: { params: Promise<Para
         <GradeProdutos produtos={produtos} />
       ) : (
         <div className="vazio">
-          <p>Ainda não tem peças cadastradas aqui, mas dá para encomendar.</p>
-          <BotaoWhatsApp mensagem={mensagemPersonalizada()}>Falar no WhatsApp</BotaoWhatsApp>
+          <p>Ainda não tem peças cadastradas aqui. Novidades chegam primeiro no Instagram.</p>
+          <BotaoWhatsApp mensagem={mensagemContato()}>Falar no WhatsApp</BotaoWhatsApp>
         </div>
       )}
 

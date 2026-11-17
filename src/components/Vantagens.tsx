@@ -2,9 +2,9 @@ import { loja } from "@/config/loja";
 import { Icone, type NomeIcone } from "./Icone";
 
 const itens: { icone: NomeIcone; titulo: string; texto: string }[] = [
-  { icone: "paleta", titulo: "Você escolhe a cor", texto: "Cada peça é impressa depois do pedido" },
-  { icone: "regua", titulo: "Tamanho sob medida", texto: "Dá para aumentar ou diminuir o modelo" },
-  { icone: "cubo", titulo: "Material", texto: loja.materiais },
+  { icone: "paleta", titulo: "Você escolhe a cor", texto: "Entre as opções de cada peça" },
+  { icone: "cubo", titulo: "Feito em Marabá", texto: "Impresso aqui, sem esperar importação" },
+  { icone: "regua", titulo: "Material", texto: loja.materiais },
   { icone: "caminhao", titulo: "Retirada ou envio", texto: "Frete combinado na conversa" },
 ];
 

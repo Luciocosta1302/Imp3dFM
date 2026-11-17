@@ -34,7 +34,7 @@ export const categorias: Categoria[] = [
   {
     slug: "chaveiros",
     nome: "Chaveiros",
-    descricao: "Modelos prontos ou com nome, logo e cores que você escolher.",
+    descricao: "Chaveiros para usar no dia a dia ou dar de presente.",
     imagem: "/img/chaveiros-tematicos.webp",
   },
   {
@@ -128,7 +128,7 @@ export const produtos: Produto[] = [
     categoria: "chaveiros",
     precoCentavos: 1290,
     descricao:
-      "Chaveiros com argola de metal. Tem foguete, patinha e outros modelos, e dá para fazer com nome ou logo. Preço por unidade; para lembrancinha em quantidade, chama no WhatsApp.",
+      "Chaveiros com argola de metal. Modelos de foguete e patinha. Preço por unidade; para lembrancinha em quantidade, chama no WhatsApp.",
     material: "PLA",
     dimensoes: "Cerca de 5 cm",
     cores: ["Azul", "Laranja", "Outras cores sob consulta"],

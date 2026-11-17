@@ -7,7 +7,7 @@ import { Cabecalho } from "@/components/Cabecalho";
 import { Logo } from "@/components/Logo";
 import { Icone } from "@/components/Icone";
 import { BotaoWhatsApp } from "@/components/BotaoWhatsApp";
-import { mensagemPersonalizada } from "@/lib/whatsapp";
+import { mensagemContato } from "@/lib/whatsapp";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="faixa-topo">
           <div className="container faixa-topo-linha">
             <span>Do digital ao real</span>
-            <span className="faixa-topo-extra">Peças impressas sob encomenda</span>
+            <span className="faixa-topo-extra">Presentes, decoração e setup gamer</span>
             <span className="faixa-topo-extra">{loja.cidade ? `Atendemos ${loja.cidade}` : "Retirada ou envio"}</span>
           </div>
         </div>
@@ -69,14 +69,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <ul>
                 <li><Link href="/catalogo/">Catálogo completo</Link></li>
                 <li><Link href="/#como-encomendar">Como encomendar</Link></li>
-                <li><Link href="/#personalizados">Peças personalizadas</Link></li>
               </ul>
             </nav>
             <div>
               <h2>Atendimento</h2>
               <p>{loja.entrega}</p>
               {loja.cidade && <p>{loja.cidade}</p>}
-              <BotaoWhatsApp mensagem={mensagemPersonalizada()} className="botao-pequeno">
+              <BotaoWhatsApp mensagem={mensagemContato()} className="botao-pequeno">
                 Falar no WhatsApp
               </BotaoWhatsApp>
             </div>

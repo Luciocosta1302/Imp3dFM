@@ -171,8 +171,8 @@ a.cartao-categoria:hover { color: var(--azul); }
 .faixa-promo h2 { font-size: 1.2rem; margin-bottom: 4px; }
 .faixa-promo p { font-size: 0.9rem; color: #dbe3f5; }
 .faixa-datas { background: var(--azul); }
-.faixa-personalizado { background: var(--marinho); }
-.faixa-personalizado p { color: #b9c2d3; }
+.faixa-duvidas { background: var(--marinho); }
+.faixa-duvidas p { color: #b9c2d3; }
 
 /* Vantagens */
 .vantagens { background: var(--cinza); margin-top: 56px; }
