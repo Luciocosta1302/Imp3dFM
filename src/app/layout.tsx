@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         {loja.demonstracao && (
           <p className="faixa-demo" role="note">
-            Site em construção: preços e fotos de exemplo, WhatsApp ainda não configurado.
+            Site em construção: preços e fotos ainda são de exemplo.
           </p>
         )}
 

@@ -17,10 +17,10 @@ export const loja = {
     "Impressão 3D em Marabá: peças funcionais, decoração e presentes criativos. Escolha no catálogo e combine cor e entrega pelo WhatsApp.",
 
   /**
-   * WhatsApp com código do país e DDD, só números. Ex.: "5594987654321".
+   * WhatsApp com código do país e DDD, só números (+55 94 8420-7660).
    * Vazio = botões de WhatsApp aparecem desativados.
    */
-  whatsapp: "",
+  whatsapp: "559484207660",
 
   /** Cidade e UF. Vazio = não aparece no site. */
   cidade: "Marabá · PA",
