@@ -10,7 +10,8 @@ export function linkWhatsApp(numero: string, mensagem: string): string | null {
 }
 
 export function mensagemProduto(nome: string, slug: string, preco: string): string {
-  return `Olá! Tenho interesse na peça "${nome}" (ref. ${slug}, ${preco}). Pode me passar cores e prazo?`;
+  const ref = preco === "Sob consulta" ? `ref. ${slug}` : `ref. ${slug}, ${preco}`;
+  return `Olá! Tenho interesse na peça "${nome}" (${ref}). Pode me passar cores e prazo?`;
 }
 
 export function mensagemContato(): string {

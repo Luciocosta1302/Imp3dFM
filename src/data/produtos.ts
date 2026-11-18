@@ -52,9 +52,23 @@ export const categorias: Categoria[] = [
 ];
 
 /** Peças que se revezam no banner "imprimindo agora" (fotos de fundo branco ficam melhores). */
-export const pecasBanner = ["cogumelo-porta-controle", "casinha-natal", "suporte-headset-controles", "lagartixa-articulada"];
+export const pecasBanner = ["mini-sueter-natalino", "cogumelo-porta-controle", "casinha-natal", "suporte-headset-controles", "lagartixa-articulada"];
 
 export const produtos: Produto[] = [
+  {
+    slug: "mini-sueter-natalino",
+    nome: "Mini suéter natalino com nome",
+    categoria: "natal",
+    precoCentavos: null,
+    descricao:
+      "Enfeite de árvore em formato de suéter natalino, com renas, flocos de neve e o nome em relevo. Dá para fazer um para cada pessoa da família. Diga pelo WhatsApp os nomes e quantas unidades você quer.",
+    material: "PLA",
+    dimensoes: "Tamanho de enfeite de árvore",
+    cores: ["Vermelho com detalhes brancos"],
+    disponivel: true,
+    destaque: true,
+    fotos: [{ src: "/img/mini-sueter-natalino.webp", alt: "Dois mini suéteres vermelhos com os nomes Felipe e Lana pendurados numa árvore de Natal" }],
+  },
   {
     slug: "suporte-headset-controles",
     nome: "Suporte de headset e controles",

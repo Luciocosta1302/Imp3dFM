@@ -105,6 +105,12 @@ describe("preço e WhatsApp", () => {
     expect(decodeURIComponent(link!.split("text=")[1])).toContain('"Vaso & cia" (ref. vaso, R$ 49,90)');
   });
 
+  it("não coloca 'Sob consulta' na mensagem de peça sem preço", () => {
+    expect(mensagemProduto("Enfeite", "enfeite", "Sob consulta")).toBe(
+      'Olá! Tenho interesse na peça "Enfeite" (ref. enfeite). Pode me passar cores e prazo?',
+    );
+  });
+
   it("retorna null com número vazio ou curto", () => {
     expect(linkWhatsApp("", "oi")).toBeNull();
     expect(linkWhatsApp("98765-4321", "oi")).toBeNull();
