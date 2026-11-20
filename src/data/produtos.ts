@@ -59,9 +59,9 @@ export const produtos: Produto[] = [
     slug: "mini-sueter-natalino",
     nome: "Mini suéter natalino com nome",
     categoria: "natal",
-    precoCentavos: null,
+    precoCentavos: 1000,
     descricao:
-      "Enfeite de árvore em formato de suéter natalino, com renas, flocos de neve e o nome em relevo. Dá para fazer um para cada pessoa da família. Diga pelo WhatsApp os nomes e quantas unidades você quer.",
+      "Enfeite de árvore em formato de suéter natalino, com renas, flocos de neve e o nome em relevo. Dá para fazer um para cada pessoa da família. Preço por unidade; diga pelo WhatsApp os nomes e quantas unidades você quer.",
     material: "PLA",
     dimensoes: "Tamanho de enfeite de árvore",
     cores: ["Vermelho com detalhes brancos"],
